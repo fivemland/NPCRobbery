@@ -19,7 +19,7 @@ Citizen.CreateThread(function()
   SetBlockingOfNonTemporaryEvents(npc, true)
 end)
 
-RegisterNetEvent('NPCSpawn')
+RegisterNetEvent('NPCRobStart')
 AddEventHandler('NPCRobStart', function()
     exports.pNotify:SendNotification({
       text = 'Egy pillanat és kijelölöm a térképen a túsz helyét!',
@@ -51,11 +51,6 @@ AddEventHandler('NPCRobStart', function()
     return Coords[math.random(#Coords)]
     end
     TaskPedSlideToCoord(npc, RandomCoords(), 1000)
-end)
-
-RegisterNetEvent('Riasztás')
-AddEventHandler('RiasztásPD', function()
-print('ANYA')
 end)
 
 AddEventHandler('rablas', function()
