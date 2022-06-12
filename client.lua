@@ -74,5 +74,4 @@ exports.qtarget:AddBoxZone("StartNPCRobbery", Config.ROBLocation.targetZone, 1, 
       },
     distance = 3.5
 })
-    --Client->Server->polices
-   
+
