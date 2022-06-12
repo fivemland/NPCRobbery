@@ -1,11 +1,11 @@
-ESX = nil
+--[[ESX = nil --Ne kérdezd miért van itt az esx majd biztos kell valamire
 
 Citizen.CreateThread(function()
   while ESX == nil do
     TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
     Citizen.Wait(0)
   end
-end) 
+end) ]]
 
 Citizen.CreateThread(function()
     RequestModel(GetHashKey(Config.Ped))
