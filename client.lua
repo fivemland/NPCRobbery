@@ -1,13 +1,13 @@
 --[[ESX = nil --Ne kérdezd miért van itt az esx majd biztos kell valamire
 
-Citizen.CreateThread(function()
+CreateThread(function()
   while ESX == nil do
     TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-    Citizen.Wait(0)
+    Wait(0)
   end
 end) ]]
 
-Citizen.CreateThread(function()
+CreateThread(function()
     RequestModel(GetHashKey(Config.Ped))
     while not HasModelLoaded(GetHashKey(Config.Ped)) do
         Wait(1)
@@ -27,7 +27,7 @@ AddEventHandler('NPCRobStart', function()
       timeout = 5000,
       layout = "topCenter",
       })
-      Citizen.Wait(10000)
+      Wait(10000)
       RequestModel(GetHashKey(Config.HostagePed))
       while not HasModelLoaded(GetHashKey(Config.HostagePed)) do
         Wait(1)
