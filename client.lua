@@ -7,6 +7,24 @@ CreateThread(function()
   end
 end) ]]
 
+function loadModel(hash)
+  hash = type(hash) == 'number' and hash or GetHashKey(hash)
+
+  if not IsModelInCdimage(hash) then 
+    return false
+  end
+
+  if HasModelLoaded(hash) then 
+    return hash
+  end
+
+  RequestModel(hash)
+  while (not HasModelLoaded(hash)) do
+      Wait(0)
+  end
+  return hash
+end
+
 CreateThread(function()
     RequestModel(GetHashKey(Config.Ped))
     while not HasModelLoaded(GetHashKey(Config.Ped)) do
