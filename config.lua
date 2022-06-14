@@ -1,3 +1,4 @@
+
 Config = {}
 
 Config.Ped = "s_m_y_armymech_01"
@@ -18,6 +19,6 @@ Config.ROBLocation = {
     maxZ = 30,
 }
 
-Config.Locale = {
-Notify = 'Egy pillanat!'
-}
+Config.Locale = "hu"
+
+Config.ESXNotify = true

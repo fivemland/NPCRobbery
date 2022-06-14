@@ -1,2 +1,0 @@
---More language comming soon and moved the language setting from config.lua to this file
---Hamarosan több nyelvet hozzá fogok adni és a nyelvi beállítások át lesznek ide hozva a config.lua-ból
