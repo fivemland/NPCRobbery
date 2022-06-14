@@ -30,11 +30,19 @@ RegisterNetEvent('NPCRobStart')
 AddEventHandler('NPCRobStart', function()
   exports.pNotify:SendNotification({
     text = 'Egy pillanat és kijelölöm a térképen a túsz helyét!',
+<<<<<<< HEAD
     type = "info",
     timeout = 5000,
     layout = "topCenter",
     })
   Wait(1)
+=======
+    type = "error",
+    timeout = 5000,
+    layout = "topCenter",
+    })
+  Wait(10000)
+>>>>>>> 4125272fbd2c0b3d4ce6d1b5878d0b47c4e77df8
 
   local hash = loadModel(Config.HostagePed)
 
@@ -47,6 +55,7 @@ AddEventHandler('NPCRobStart', function()
   BeginTextCommandSetBlipName("STRING")
   AddTextComponentString('Túsz')
   EndTextCommandSetBlipName(BlipNPC)
+<<<<<<< HEAD
 
   local Coords = {
     Config.CoordsToWalk.a,
@@ -62,14 +71,29 @@ AddEventHandler('robbery', function()
   TriggerEvent('NPCRobStart')
 end)
 
+=======
+
+  local Coords = {
+    Config.CoordsToWalk.a,
+    Config.CoordsToWalk.b
+  }
+
+  TaskPedSlideToCoord(npc, Coords[math.random(#Coords)], 1000)
+end)
+
+AddEventHandler('rablas', function()
+  TriggerEvent('NPCRobStart')
+end)
+
+>>>>>>> 4125272fbd2c0b3d4ce6d1b5878d0b47c4e77df8
 exports.qtarget:AddBoxZone("StartNPCRobbery", Config.ROBLocation.targetZone, 1, 1, {
-   name="StartNPCRobbery",
-   heading = Config.ROBLocation.targetHeading,
-   debugPoly = false,
-   minZ = Config.ROBLocation.minZ,
-   maxZ = Config.ROBLocation.maxZ,
-   }, {
-     options = {
+  name="StartNPCRobbery",
+  heading = Config.ROBLocation.targetHeading,
+  debugPoly = false,
+  minZ = Config.ROBLocation.minZ,
+  maxZ = Config.ROBLocation.maxZ,
+  }, {
+    options = {
         {
           event = "robbery",
           icon = "Fas Fa-hands",
@@ -78,5 +102,9 @@ exports.qtarget:AddBoxZone("StartNPCRobbery", Config.ROBLocation.targetZone, 1, 
       },
     distance = 3.5
 })
+<<<<<<< HEAD
 --Client->Server->polices
    
+=======
+
+>>>>>>> 4125272fbd2c0b3d4ce6d1b5878d0b47c4e77df8
